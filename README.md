@@ -1,2 +1,0 @@
-# swm
-software modelling tool
