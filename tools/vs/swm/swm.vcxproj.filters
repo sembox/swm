@@ -26,10 +26,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\swm\include\shader.h">
+    <ClInclude Include="..\..\..\swm\include\swm_win.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\swm\include\swm_win.h">
+    <ClInclude Include="ml_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_area.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ml_build_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

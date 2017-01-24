@@ -15,8 +15,15 @@
     <None Include="..\..\..\swm\shaders\core.vs" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\swm\include\shader.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_shader.h" />
     <ClInclude Include="..\..\..\swm\include\swm_win.h" />
+    <ClInclude Include="ml_build_cfg.h" />
+    <ClInclude Include="ml_config.h" />
+    <ClInclude Include="ml_area.h" />
+    <ClInclude Include="ml_globals.h" />
+    <ClInclude Include="ml_item.h" />
+    <ClInclude Include="ml_types.h" />
+    <ClInclude Include="ml_window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\swm\src\main.cpp" />
