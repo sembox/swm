@@ -60,22 +60,22 @@ typedef struct
 
 
 // Doubly linked list API
-void dl_init(link_head_tail_t* pList);
+void dl_init(link_head_tail_t* list);
 void dl_insert(dlink_entry_t* entry, dlink_entry_t* pPrev, dlink_entry_t* pNext);
 void dl_add_next(dlink_entry_t* entry, dlink_entry_t* pLocation);
 void dl_add_prev(dlink_entry_t* entry, dlink_entry_t* pLocation);
-void dl_add_head(link_head_tail_t* pList, dlink_entry_t* entry);
-void dl_add_tail(link_head_tail_t* pList, dlink_entry_t* entry);
+void dl_add_head(link_head_tail_t* list, dlink_entry_t* entry);
+void dl_add_tail(link_head_tail_t* list, dlink_entry_t* entry);
 void dl_remove(dlink_entry_t* entry);
-void* dl_pop_head(link_head_tail_t* pList);
-void* ld_pop_tail(link_head_tail_t* pList);
+void* dl_pop_head(link_head_tail_t* list);
+void* ld_pop_tail(link_head_tail_t* list);
 
 
 // Single linked list API
-void sl_init(link_head_tail_t* pList);
+void sl_init(link_head_tail_t* list);
 void sl_insert(slink_entry_t* entry, slink_entry_t* pPrev);
 void sl_add_next(slink_entry_t* entry, slink_entry_t* pLocation);
-void sl_add_tail(link_head_tail_t* pList, slink_entry_t* entry);
-void* sl_pop_head(link_head_tail_t* pList);
+void sl_add_tail(link_head_tail_t* list, slink_entry_t* entry);
+void* sl_pop_head(link_head_tail_t* list);
 
 #endif

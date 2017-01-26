@@ -27,4 +27,18 @@ typedef unsigned char       bool_t;
 #define FALSE               0
 #endif
 
+#ifndef NULL
+#define NULL        ((void *)0)  
+#endif
+
+#define DISABLE     (0)
+#define ENABLE      (1)
+#define U8_MAX      (0xFF) 
+#define U16_MAX     (0xFFFF)
+#define U32_MAX     (0xFFFFFFFF)
+#define U64_MAX     (0xFFFFFFFFFFFFFFFFLL) 
+
+#define MAX(x,y)    (x)>(y) ? (x) : (y))
+#define MIN(x,y)    ((x)<(y) ? (x) : (y))
+
 #endif //_ML_TYPES_

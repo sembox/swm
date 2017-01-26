@@ -7,5 +7,6 @@
 #ifndef _ML_BUILD_CFG_H_
 #define _ML_BUILD_CFG_H_
 
+#define DEBUG_BUILD ENABLE
 
 #endif //_ML_BUILD_CFG_H_

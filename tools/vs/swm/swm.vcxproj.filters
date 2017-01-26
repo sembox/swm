@@ -35,6 +35,9 @@
     <ClCompile Include="..\..\..\swm\src\ml_llist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\swm\src\ml_mem_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\swm\include\ml_area.h">
@@ -77,6 +80,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\swm\include\ml_llist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_macro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
