@@ -26,37 +26,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\swm\include\swm_win.h">
+    <ClCompile Include="..\..\..\swm\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\swm\src\ml_controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\swm\include\ml_area.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ml_types.h">
+    <ClInclude Include="..\..\..\swm\include\ml_build_cfg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ml_area.h">
+    <ClInclude Include="..\..\..\swm\include\ml_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ml_config.h">
+    <ClInclude Include="..\..\..\swm\include\ml_geom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ml_window.h">
+    <ClInclude Include="..\..\..\swm\include\ml_globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ml_item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ml_globals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ml_build_cfg.h">
+    <ClInclude Include="..\..\..\swm\include\ml_item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\swm\include\ml_shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\swm\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="..\..\..\swm\include\ml_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_win_layout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\swm_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
