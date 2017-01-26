@@ -4,7 +4,6 @@
 // file:  ml_area.h
 // desc:  Area data strcutures and api definitions
 //-------------------------------------------------------------------------------
-
 #ifndef _ML_AREA_H_
 #define _ML_AREA_H_
 

@@ -17,6 +17,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\swm\src\main.cpp" />
     <ClCompile Include="..\..\..\swm\src\ml_controller.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_llist.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\swm\include\ml_area.h" />
@@ -26,6 +27,8 @@
     <ClInclude Include="..\..\..\swm\include\ml_geom.h" />
     <ClInclude Include="..\..\..\swm\include\ml_globals.h" />
     <ClInclude Include="..\..\..\swm\include\ml_item.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_llist.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_mem_mgr.h" />
     <ClInclude Include="..\..\..\swm\include\ml_shader.h" />
     <ClInclude Include="..\..\..\swm\include\ml_types.h" />
     <ClInclude Include="..\..\..\swm\include\ml_window.h" />
