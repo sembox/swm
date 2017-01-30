@@ -24,6 +24,7 @@ link_head_tail_t mem_chanks;
 
 void ml_memmgr_init()
 {
+	ML_LOG(ML_LOG_INFO, "Initializing memory manager...");
     sl_init(&mem_chanks);
 }
 
@@ -46,12 +47,16 @@ void *ml_memalloc(uint32_t size, uint32_t line)
         else
         {
             //fail to allocate memory for the entry
-
+			ML_LOG(ML_LOG_ERROR, "Failed to allocate intern. memory, size: %d", sizeof(mem_chank_node_t));
             //free allocated memory 
             free(mem_ptr);
             mem_ptr = NULL;
         }
     }
+	else
+	{
+		ML_LOG(ML_LOG_ERROR, "Failed to allocate memory, size: %d at %d", size, line);
+	}
     return mem_ptr;
 }
 

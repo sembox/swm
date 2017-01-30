@@ -11,5 +11,6 @@
 // Project-wide configuration
 //---------------------------------------------------------
 #define SAMPLE_VALUE 0
+#define SELF_TEST 1
 
 #endif //_ML_CONFIG_H_

@@ -38,6 +38,12 @@
     <ClCompile Include="..\..\..\swm\src\ml_mem_mgr.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\swm\src\ml_prj_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\swm\src\ml_app_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\swm\include\ml_area.h">
@@ -86,6 +92,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\swm\include\ml_macro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_prj_mgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\swm\include\ml_app_logic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,11 +16,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\swm\src\main.cpp" />
+    <ClCompile Include="..\..\..\swm\src\ml_app_logic.c" />
     <ClCompile Include="..\..\..\swm\src\ml_controller.c" />
     <ClCompile Include="..\..\..\swm\src\ml_llist.c" />
     <ClCompile Include="..\..\..\swm\src\ml_mem_mgr.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_prj_mgr.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\swm\include\ml_app_logic.h" />
     <ClInclude Include="..\..\..\swm\include\ml_area.h" />
     <ClInclude Include="..\..\..\swm\include\ml_build_cfg.h" />
     <ClInclude Include="..\..\..\swm\include\ml_config.h" />
@@ -29,8 +32,10 @@
     <ClInclude Include="..\..\..\swm\include\ml_globals.h" />
     <ClInclude Include="..\..\..\swm\include\ml_item.h" />
     <ClInclude Include="..\..\..\swm\include\ml_llist.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_logger.h" />
     <ClInclude Include="..\..\..\swm\include\ml_macro.h" />
     <ClInclude Include="..\..\..\swm\include\ml_mem_mgr.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_prj_mgr.h" />
     <ClInclude Include="..\..\..\swm\include\ml_shader.h" />
     <ClInclude Include="..\..\..\swm\include\ml_types.h" />
     <ClInclude Include="..\..\..\swm\include\ml_utils.h" />
