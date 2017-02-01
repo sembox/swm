@@ -12,6 +12,13 @@
 #include "ml_window.h"
 #include "ml_geom.h"
 #include "ml_area.h"
+#include "ml_llist.h"
+
+typedef struct _ml_area_list_t
+{
+	link_head_tail_t head_tail;
+	ml_area_t *areas;
+} ml_area_list_t;
 
 //-------------------------------------------------------------------------------
 // Layout definitions

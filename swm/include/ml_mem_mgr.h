@@ -17,7 +17,13 @@ typedef struct
     link_head_tail_t head_tail;  // list pointer
 } ml_mem_chanks_t;
 
+
+#define MEMCPY(dst,src,size)        memcpy((void*)(dst),(void*)(src),size)
+#define MEMMOVE(dst,src,size)       memmove((void*)(dst),(void*)(src),size)
+#define MEMCMP(dst,src,size)        memcmp((void*)(dst),(void*)(src),size)
+#define MEMSET(dst,pattern,size)    memset((void*)(dst),pattern,size)
+
 //allocate and track memory 
-void *ml_memalloc(uint32_t size, uint32_t line);
+void *ml_mem_alloc(uint32_t size, uint32_t line);
 // free memory 
 void ml_mem_free(void *ptr);

@@ -79,3 +79,27 @@ void sl_add_tail(link_head_tail_t* list, slink_entry_t* entry);
 void* sl_pop_head(link_head_tail_t* list);
 
 #endif
+
+#if 0
+// how to use
+
+typedef struct
+{
+	link_head_tail_t list;  //  allocated entry list
+	uint8_t* data1;			// data 1
+	uint8_t* data2;			// data 2
+} linked_list_str_t;
+
+
+// iteration
+linked_list_str_t *ll_items;
+dlink_entry_t* entry;
+list_node_t* node;
+
+DL_FOR_EACH(entry, &ll_items->list)
+{
+	node = STR_PTR_FROM_MEMBER(entry, list_node_t, dlink);
+	node->data1 
+	node->data2;
+}
+#endif 

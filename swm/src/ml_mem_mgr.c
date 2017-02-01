@@ -9,7 +9,6 @@
 #include "ml_llist.h"
 #include <stdlib.h>
 
-
 typedef struct _mem_chank_node_t
 {
     slink_entry_t slink;    // single linked list
@@ -29,7 +28,7 @@ void ml_memmgr_init()
 }
 
 //allocate and track memory 
-void *ml_memalloc(uint32_t size, uint32_t line)
+void *ml_mem_alloc(uint32_t size, uint32_t line)
 {
     void* mem_ptr = malloc(size);
     mem_chank_node_t *entry; 

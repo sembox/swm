@@ -15,6 +15,16 @@
 #define MAX_PROJECT_TITLE_LEN 64
 #define MAX_PROJECT_DESC_LEN 256
 
+// supported project storage types
+typedef enum _ml_prj_storage_type_t
+{
+	ML_PRJ_STOARGE_FAKE,	// fake storage for debug purpose only
+	ML_PRJ_STORAGE_LOCAL,	// local file system
+	ML_PRJ_STORAGE_CLOUD,	// cloud
+	ML_PRJ_STOARGE_GIT,		// git repo
+	ML_PRJ_STORAGE_SVC		// priate service
+} ml_prj_storage_type_t;
+
 
 //project definition structure
 typedef struct _ml_project_t
@@ -27,15 +37,17 @@ typedef struct _ml_project_t
 
 typedef struct _ml_prj_list_t
 {
-
+	ml_project_t *proj;
 } ml_prj_list_t;
 
 
 typedef struct _ml_prj_mgr_data_t
 {
-	open_proj_list;
-	recen_proj_list;
+	ml_prj_list_t open_proj_list;
+	ml_prj_list_t recen_proj_list;
 } ml_prj_mgr_data_t;
+
+
 
 
 

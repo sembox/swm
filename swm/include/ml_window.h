@@ -7,15 +7,14 @@
 #ifndef _ML_WINDOW_H_
 #define _ML_WINDOW_H_
 
-#include "ml_globals.h"
-
 //---------------------------------------------------------
 // Window defintions
 //---------------------------------------------------------
 typedef struct _ml_window_t
 {
-    uint32_t id;    // window id
-    dims_t dim;     // window dimensions
+    uint32_t id;			// window id
+    dims_t dim;				// window dimensions
+	win_layout_t*layout;	// windows layout
 } ml_window_t;
 
 

@@ -25,6 +25,17 @@ bool_t ml_prj_init()
 //-------------------------------------------------------------------------------
 // List available projects
 //-------------------------------------------------------------------------------
+bool_t ml_prj_fake_list()
+{
+	// return set of fake porjects
+	// Test project 1
+	// Test project 2
+}
+
+
+//-------------------------------------------------------------------------------
+// List available projects
+//-------------------------------------------------------------------------------
 bool_t ml_proj_list(char* project_list, uint32_t *size)
 {
 
@@ -52,15 +63,9 @@ bool_t ml_prj_close(uint32_t prj_id)
 //-------------------------------------------------------------------------------
 // Delete existing project
 //-------------------------------------------------------------------------------
-bool_t ml_prj_close(uint32_t prj_id)
+bool_t ml_prj_delete(uint32_t prj_id)
 {
 	return TRUE;
 }
 
-//-------------------------------------------------------------------------------
-// Close project (save unsaved changes and realease resources
-//-------------------------------------------------------------------------------
-bool_t ml_project_close(uint32_t prj_id)
-{
-	return TRUE;
-}
+
