@@ -5,17 +5,17 @@
 // desc:  Useful stuff goes here
 //-------------------------------------------------------------------------------
 #include"ml_globals.h"
+#include "ml_win_port.h"
 #include <time.h>
-
 
 //-------------------------------------------------------------------------------
 // retrieve system time in milliseconods
 //-------------------------------------------------------------------------------
 uint64_t ml_get_system_time()
 {
-	uint64_t time = (uint64_t)time();
+	uint64_t cur_time = (uint64_t)time(&cur_time);
 	//get current system time
-	return time;
+	return cur_time;
 }
 
 
@@ -26,4 +26,35 @@ void ml_fomat_time(uint64_t time, char* buf, uint32_t buf_len)
 {
 	time_t t = (time_t)time;
 	strftime(buf, buf_len, "%Y-%m-%d %H:%M:%S", localtime(&t));
+}
+
+
+//-------------------------------------------------------------------------------
+// Sleep for given amount of milliseconds
+//-------------------------------------------------------------------------------
+void ml_sleep_ms(uint32_t ms)
+{
+	if (ms >= 1000) 
+	{
+		//sleep(ms / 1000);
+		ms = (ms % 1000);
+	}
+	//usleep(ms * 1000);
+}
+
+
+//-------------------------------------------------------------------------------
+// Start timer
+//-------------------------------------------------------------------------------
+void ml_start_timer(uint32_t ms, void(*cb)(void))
+{
+	ml_win_start_timer(ms, cb);
+}
+
+//-------------------------------------------------------------------------------
+// Start timer
+//-------------------------------------------------------------------------------
+void ml_stop_timer()
+{
+	ml_win_stop_timer();
 }

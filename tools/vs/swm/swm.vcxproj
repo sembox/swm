@@ -15,26 +15,43 @@
     <None Include="..\..\..\swm\shaders\core.vs" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\swm\src\main.cpp" />
+    <ClInclude Include="..\..\..\swm\include\ml_win_port.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClCompile Include="..\..\..\swm\src\main.c" />
     <ClCompile Include="..\..\..\swm\src\ml_app.c" />
     <ClCompile Include="..\..\..\swm\src\ml_app_logic.c" />
     <ClCompile Include="..\..\..\swm\src\ml_controller.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_event_mgr.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_gl.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_io.c" />
     <ClCompile Include="..\..\..\swm\src\ml_llist.c" />
     <ClCompile Include="..\..\..\swm\src\ml_logger.c" />
     <ClCompile Include="..\..\..\swm\src\ml_mem_mgr.c" />
     <ClCompile Include="..\..\..\swm\src\ml_prj_mgr.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_stubs.c" />
     <ClCompile Include="..\..\..\swm\src\ml_ui.c" />
     <ClCompile Include="..\..\..\swm\src\ml_utils.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_view.c" />
+    <ClCompile Include="..\..\..\swm\src\ml_win_port.c" />
+    <ClCompile Include="ml_draw_ui.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\swm\include\ml_app.h" />
     <ClInclude Include="..\..\..\swm\include\ml_app_logic.h" />
     <ClInclude Include="..\..\..\swm\include\ml_area.h" />
     <ClInclude Include="..\..\..\swm\include\ml_build_cfg.h" />
     <ClInclude Include="..\..\..\swm\include\ml_config.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_controller.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_draw_ui.h" />
     <ClInclude Include="..\..\..\swm\include\ml_events.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_event_mgr.h" />
     <ClInclude Include="..\..\..\swm\include\ml_geom.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_gl.h" />
     <ClInclude Include="..\..\..\swm\include\ml_globals.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_io.h" />
     <ClInclude Include="..\..\..\swm\include\ml_item.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_lang_mgr.h" />
     <ClInclude Include="..\..\..\swm\include\ml_llist.h" />
     <ClInclude Include="..\..\..\swm\include\ml_logger.h" />
     <ClInclude Include="..\..\..\swm\include\ml_macro.h" />
@@ -43,9 +60,11 @@
     <ClInclude Include="..\..\..\swm\include\ml_shader.h" />
     <ClInclude Include="..\..\..\swm\include\ml_types.h" />
     <ClInclude Include="..\..\..\swm\include\ml_utils.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_view.h" />
     <ClInclude Include="..\..\..\swm\include\ml_window.h" />
     <ClInclude Include="..\..\..\swm\include\ml_win_layout.h" />
     <ClInclude Include="..\..\..\swm\include\swm_win.h" />
+    <ClInclude Include="..\..\..\swm\include\ml_ui_theme_mgr.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8C22E135-147E-48F1-947B-AC842F313475}</ProjectGuid>
@@ -94,12 +113,21 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\..\swm\include;..\..\..\ext_libs\glfw\include;..\..\..\ext_libs\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS</AdditionalOptions>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4099;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\ext_libs\glfw\lib-vc2013;..\..\..\ext_libs\glew\lib\Release\Win32</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

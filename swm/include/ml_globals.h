@@ -12,4 +12,5 @@
 #include "ml_config.h"
 #include "ml_macro.h"
 #include "ml_logger.h"
+
 #endif //_ML_GLOBALS_H_

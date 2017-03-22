@@ -7,17 +7,17 @@
 #ifndef _ML_WINDOW_H_
 #define _ML_WINDOW_H_
 
-//---------------------------------------------------------
+
+//-------------------------------------------------------------------------------
 // Window defintions
-//---------------------------------------------------------
+//-------------------------------------------------------------------------------
 typedef struct _ml_window_t
 {
-    uint32_t id;			// window id
-    dims_t dim;				// window dimensions
-	win_layout_t*layout;	// windows layout
+    uint32_t id;					// window id
+	position_t pos;					// window position
+    dims_t dim;						// window dimensions
+	struct _win_layout_t* layout;	// windows layout
 } ml_window_t;
-
-
 
 
 #endif //_ML_WINDOW_H_

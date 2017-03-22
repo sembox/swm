@@ -13,7 +13,7 @@
 // Linked list uses below link mechanism to make insertion and deletion simpler.
 // (see Sentinel linked list)
 //-------------------------------------------------------------------------------
-void ld_init(link_head_tail_t* list)
+void dl_init(link_head_tail_t* list)
 {
     list->head = list;
     list->tail = list;
@@ -106,7 +106,7 @@ void* dl_pop_head(link_head_tail_t* list)
 //-------------------------------------------------------------------------------
 // Pop a entry from tail of list
 //-------------------------------------------------------------------------------
-void* ld_pop_tail(link_head_tail_t* list)
+void* dl_pop_tail(link_head_tail_t* list)
 {
     dlink_entry_t* entry;
     entry = (dlink_entry_t *)list->tail;
@@ -182,4 +182,3 @@ void* sl_pop_head(link_head_tail_t* list)
     list->head = entry->next;
     return entry;
 }
-

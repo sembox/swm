@@ -5,6 +5,8 @@
 // desc:  User interface elements
 //-------------------------------------------------------------------------------
 #include "ml_globals.h"
+#include "ml_geom.h"
+#include "ml_win_layout.h"
 #include "ml_window.h"
 #include "ml_area.h"
 #include "ml_win_layout.h"
@@ -19,27 +21,5 @@ bool_t ml_ui_init()
 }
 
 
-//-------------------------------------------------------------------------------
-// Draw window content
-//-------------------------------------------------------------------------------
-bool_t ml_draw_win(ml_window_t *win)
-{
-	//get window layout
-	win_layout_t* layout = win->layout;
 
-	//layout contain window's areas (views)
-	ml_area_list_t *wa_list = layout->areas;
-
-	while (area = )
-	{
-		// draw area 
-		ml_draw_area();
-
-		//draw area border;
-		ml_draw_area_border();
-	}
-
-
-	return TRUE;
-}
 

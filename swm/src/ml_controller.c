@@ -5,22 +5,12 @@
 // desc:  Processing user input and distribute commands to other components
 //-------------------------------------------------------------------------------
 #include "ml_globals.h"
-#include "ml_events.h"
 #include "ml_llist.h"
-
-typedef struct
-{
-    uint32_t count;              // list count
-    link_head_tail_t head_tail;  // list pointer
-} ml_evt_queue_t;
-
-
-typedef struct
-{
-    slink_entry_t slink;         // single linked list
-    ml_event_t *evt;             // event data
-} ml_evt_entry_t;
-
+#include "ml_mem_mgr.h"
+#include "ml_gl.h"
+#include "ml_app.h"
+#include "ml_events.h"
+#include "ml_controller.h"
 
 ml_evt_queue_t ml_evt_queue;
 
@@ -36,7 +26,7 @@ void ml_ctl_init()
 bool_t ml_ctl_add_evt(ml_event_t *evt)
 {
     //allocate memory for the event item
-    ml_evt_entry_t *evt_ent = (ml_evt_entry_t *)ml_memalloc(sizeof(ml_evt_entry_t), __LINE__);    
+    ml_evt_entry_t *evt_ent = (ml_evt_entry_t *)ml_mem_alloc(sizeof(ml_evt_entry_t), __LINE__);    
     
     //store pointer to the event
     evt_ent->evt = evt;
@@ -59,6 +49,11 @@ bool_t ml_ctl_process_evt(ml_event_t *evt)
 void ml_ctl_dump_evt_queu()
 {
 
+}
+
+bool_t ml_ctl_exit(ml_app_t* ml_app)
+{
+	return ml_gl_shold_close();
 }
 
 

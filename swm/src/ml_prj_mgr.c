@@ -30,6 +30,7 @@ bool_t ml_prj_fake_list()
 	// return set of fake porjects
 	// Test project 1
 	// Test project 2
+	return TRUE;
 }
 
 
@@ -38,7 +39,7 @@ bool_t ml_prj_fake_list()
 //-------------------------------------------------------------------------------
 bool_t ml_proj_list(char* project_list, uint32_t *size)
 {
-
+	return TRUE;
 }
 
 

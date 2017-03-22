@@ -16,6 +16,14 @@ typedef struct _point_t
 } point_t;
 
 
+// position
+typedef struct _position_t
+{
+	float x;
+	float y;
+} position_t;
+
+
 // dimension type
 typedef struct _dims_t
 {

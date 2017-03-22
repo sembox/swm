@@ -5,6 +5,8 @@
 // desc: SWM maros defititions
 //-------------------------------------------------------------------------------
 
+#include <stddef.h>
+
 // structure pointer from the member 
 #define STR_PTR_FROM_MEMBER(addr,s,m) ((s *)((uint8_t *)(addr) - offsetof(s,m)))
 // size of structure member

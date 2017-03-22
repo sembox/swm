@@ -17,7 +17,7 @@ typedef struct
 
 
 // doubly linked List
-typedef struct
+typedef struct _dlink_entry_t
 {
     void* prev;     // prevoius pointer (tail pointer)
     void* next;     // next pointer (head pointer)
@@ -34,6 +34,7 @@ typedef struct
 //-----------------------------------------------------------------------------
 //  Macros definitions:
 //-----------------------------------------------------------------------------
+#define DL_IS_EMPTY(DL)				   (((DL)->head) == ((DL)->tail))	
 #define DL_FIRST_ENTRY(DL)             ((DL)->head)
 #define DL_LAST_ENTRY(DL)              ((DL)->tail)
 #define DL_IS_NULL(DL, entry)          ((void*)(DL) == (void*)(entry))
@@ -42,6 +43,7 @@ typedef struct
 #define DL_HT_PTR(X)                   ((link_head_tail_t *)(X))
 #define DL_ET_PTR(X)                   ((dlink_entry_t *)(X))
 #define DL_HT_CLEAR(X)                 {(X).prev = NULL; (X).next = NULL;}
+#define SL_IS_EMPTY(SL)				   (((void*)(SL)->head) == ((void*)(SL)))	
 #define SL_FIRST_ENTRY(SL)             ((SL)->head)
 #define SL_LAST_ENTRY(SL)              ((SL)->tail)
 #define SL_IS_NULL(SL, entry)          ((void*)(SL) == (void*)(entry))
@@ -67,8 +69,8 @@ void dl_add_prev(dlink_entry_t* entry, dlink_entry_t* pLocation);
 void dl_add_head(link_head_tail_t* list, dlink_entry_t* entry);
 void dl_add_tail(link_head_tail_t* list, dlink_entry_t* entry);
 void dl_remove(dlink_entry_t* entry);
-void* dl_pop_head(link_head_tail_t* list);
-void* ld_pop_tail(link_head_tail_t* list);
+void *dl_pop_head(link_head_tail_t* list);
+void *dl_pop_tail(link_head_tail_t* list);
 
 
 // Single linked list API
@@ -76,30 +78,63 @@ void sl_init(link_head_tail_t* list);
 void sl_insert(slink_entry_t* entry, slink_entry_t* pPrev);
 void sl_add_next(slink_entry_t* entry, slink_entry_t* pLocation);
 void sl_add_tail(link_head_tail_t* list, slink_entry_t* entry);
-void* sl_pop_head(link_head_tail_t* list);
-
+void *sl_pop_head(link_head_tail_t* list);
+void sl_remove(slink_entry_t* entry);
 #endif
 
 #if 0
 // how to use
 
-typedef struct
+
+// module global info structure
+typedef struct _modlue_data_t
 {
-	link_head_tail_t list;  //  allocated entry list
+	link_head_tail_t list;  // list of items
 	uint8_t* data1;			// data 1
 	uint8_t* data2;			// data 2
-} linked_list_str_t;
+} modlue_data_t;
 
-
-// iteration
-linked_list_str_t *ll_items;
-dlink_entry_t* entry;
-list_node_t* node;
-
-DL_FOR_EACH(entry, &ll_items->list)
+typedef struct _list_data_entry_t
 {
+	dlink_entry_t dlink;    // linked list pointers
+	unit32_t d1;			// other members of link entreis
+	uint32_t d2;			// other members 
+} list_data_entry_t;
+
+
+// module data structure
+modlue_data_t module_data;
+
+//1. init linked list before using it
+dlinit(&module_data.list);
+
+//2. add list items
+list_data_entry_t *entry1 = ...create / allocate entry;
+dl_add_head(&module_data.list, &entry1->dlink);
+or 
+dl_add_tail(&module_data.list, &entry1->dlink);
+or 
+dl_add_next(..), dl_add_prev(..)
+
+//3. delete item
+list_data_entry_t *entry1;
+dl_remove(entry1);
+
+//4. pop from head/tail
+list_data_entry_t *entry2;
+entry2 = dl_pop_head(&module_data.list);
+
+//5. iteration
+dlink_entry_t* entry;
+list_data_entry_t* node;
+
+DL_FOR_EACH(entry, &module_data.list)
+{
+	//from list pointer to node structure
 	node = STR_PTR_FROM_MEMBER(entry, list_node_t, dlink);
+	//access node fields
 	node->data1 
 	node->data2;
 }
+
 #endif 

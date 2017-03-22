@@ -7,6 +7,7 @@
 #ifndef _ML_BUILD_CFG_H_
 #define _ML_BUILD_CFG_H_
 
-#define DEBUG_BUILD ENABLE
+#define BLD_TYPE_DEBUG ENABLE
+#define DEF_LOG_SEVERITY   0		//info
 
 #endif //_ML_BUILD_CFG_H_
